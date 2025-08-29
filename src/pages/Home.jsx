@@ -1,4 +1,3 @@
-// client/src/pages/Home.jsx
 import { useEffect, useState } from 'react';
 import api from '../lib/api';
 import HotelCard from '../components/HotelCard';
@@ -8,10 +7,9 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // fetch a handful of hotels (backend will ignore unknown params safely)
     api.get('/hotels', { limit: 6 })
       .then(setHotels)
-      .catch((err) => console.error('Home hotels error:', err))
+      .catch(console.error)
       .finally(() => setLoading(false));
   }, []);
 
@@ -20,23 +18,18 @@ export default function Home() {
       {/* Hero */}
       <div className="text-center mt-10 mb-8">
         <h1 className="text-3xl sm:text-4xl font-extrabold">Find your perfect stay</h1>
-        <p className="text-gray-600 mt-2">
-          Search by city, explore rooms, and book instantly.
-        </p>
+        <p className="text-gray-600 mt-2">Search by city, explore rooms, and book instantly.</p>
       </div>
 
       {/* TIP */}
-      <p className="text-center text-sm text-gray-500">
-        Tip: try “Goa” or “Manali”.
-      </p>
+      <p className="text-center text-sm text-gray-500">Tip: try “Goa” or “Manali”.</p>
 
       {/* Featured */}
-      <section className="mt-10">
+      <section className="max-w-5xl mx-auto px-4 mt-10">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold">Featured Hotels</h2>
           <a href="/search" className="text-sm text-blue-600">Explore all</a>
         </div>
-
         {loading ? (
           <p className="text-gray-500 mt-4">Loading…</p>
         ) : hotels.length ? (
