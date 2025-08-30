@@ -1,3 +1,4 @@
+// client/src/pages/Home.jsx
 import { useEffect, useState } from 'react';
 import api from '../lib/api';
 import HotelCard from '../components/HotelCard';
@@ -9,22 +10,22 @@ export default function Home() {
   useEffect(() => {
     api.get('/hotels', { limit: 6 })
       .then(setHotels)
-      .catch(console.error)
+      .catch((err) => console.error('Home hotels error:', err))
       .finally(() => setLoading(false));
   }, []);
 
   return (
     <div className="max-w-6xl mx-auto px-4">
-      {/* Hero */}
+      {/* Hero Section */}
       <div className="text-center mt-10 mb-8">
         <h1 className="text-3xl sm:text-4xl font-extrabold">Find your perfect stay</h1>
         <p className="text-gray-600 mt-2">Search by city, explore rooms, and book instantly.</p>
       </div>
 
-      {/* TIP */}
+      {/* Tip Section */}
       <p className="text-center text-sm text-gray-500">Tip: try “Goa” or “Manali”.</p>
 
-      {/* Featured */}
+      {/* Featured Hotels Section */}
       <section className="max-w-5xl mx-auto px-4 mt-10">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold">Featured Hotels</h2>
