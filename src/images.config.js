@@ -1,31 +1,13 @@
 // client/src/images.config.js
-const HOTEL_IMAGES = {
-  // First hotel
-  'seaside-retreat': [
-    '/images/hotels/hotel1.jpg',
-    '/images/hotels/hotel2.jpg',
-    '/images/hotels/card1.jpg',
-    '/images/hotels/card2.jpg',
-    '/images/hotels/card3.jpg',
-    '/images/hotels/card4.jpg',
-    '/images/hotels/card5.jpg',
-    '/images/hotels/card6.jpg',
-    '/images/hotels/card7.jpg'
-  ],
+// Map hotel slugs (from your DB) to image filenames stored in /public/images/hotels
 
-  // Second hotel
-  'mountain-view-inn': [
-    '/images/hotels/hotel3.jpg',
-    '/images/hotels/hotel4.jpg',
-    '/images/hotels/card8.jpg',
-    '/images/hotels/card9.jpg',
-    '/images/hotels/card10.jpg',
-    '/images/hotels/card11.jpg',
-    '/images/hotels/card12.jpg',
-    '/images/hotels/card13.jpg',
-    '/images/hotels/card14.jpg',
-    '/images/hotels/card15.jpg'
-  ],
+export default {
+  // Example hotels:
+  'seaside-retreat': ['card1.jpg', 'card2.jpg', 'card3.jpg'],
+  'mountain-view-inn': ['card4.jpg', 'card5.jpg'],
+  'city-center-hotel': ['card6.jpg', 'card7.jpg'],
+  'luxury-palace': ['card8.jpg', 'card9.jpg'],
+  'budget-stay': ['card10.jpg'],
+
+  // Add more mappings if your DB has different slugs
 };
-
-export default HOTEL_IMAGES;
