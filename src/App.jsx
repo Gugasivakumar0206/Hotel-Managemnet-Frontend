@@ -1,14 +1,15 @@
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
-import Search from './pages/Search'; // Ensure Search component is imported
+import Search from './pages/Search'; // Ensure Search is imported
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/search" component={Search} />
-        {/* Other routes */}
+        <Route path="/" exact component={Home} />
+        <Route path="/search" component={Search} /> {/* Ensure /search path is mapped */}
+        {/* Add other routes */}
       </Switch>
     </Router>
   );
